@@ -1,0 +1,154 @@
+main {
+    height: calc(100% - 60px);
+    background: url('../../assets/javascript2.jpg');
+    background-size: 100% 100%;
+   margin-top: 2px;
+    //background-size: cover;
+    //background-origin: center;
+   // background-repeat: no-repeat;
+   // color: #444;
+    
+   // background-blend-mode: 
+   // opacity: 0.5;
+   // filter: alpha(opacity=50);
+    
+    #out { 
+        display: grid;
+        grid-template-rows: 80px auto auto;
+        background: rgba(255, 255, 255, 0.7);
+        height: 100%;
+        color: black;
+    }
+
+    h2 {
+        margin-top: 50px;
+        padding: 0;
+        color: black;
+        text-align: center;
+        text-transform: uppercase;
+        animation: hAnimate 900ms;
+    }
+    button {
+        position: absolute;
+        color: #777;
+        padding: 10px 15px;
+        font-weight: bold;
+        background: white;
+        border: 1px solid #777;
+        border-radius: 25px;
+        top: 80%;
+        left: calc(50% - 100px); 
+        transition: all 500ms;       
+        animation: mainBtn 4s ease-in-out infinite;
+        &:hover {
+           // background: rgb(12, 247, 176);
+            color: rgb(12, 247, 176);
+            border: 1px solid rgb(12, 247, 176);            
+            animation-play-state: paused;
+            //transform: rotateX(360deg);              
+        }        
+    }
+
+}
+
+#detail {
+    height: 100px;
+    width: 100%;
+    justify-self: center;
+    h4 {
+        text-align: center;
+        padding: 0 20px;
+    }
+}
+
+#container {
+    .icons {
+        position: absolute;
+        width: 8%;
+        opacity: 0;
+    }
+    #angular {
+        left: 33%;
+        margin-top: 1%;
+        animation: iconsAnimate .5s ease-in .3s forwards;
+    }
+    #node {
+        left: 42%;
+        margin-top: 3%;
+        animation: iconsAnimate .5s ease-in .4s forwards;
+    }
+    #express {
+        margin-top: 4%;
+        left: 51%;
+        animation: iconsAnimate .5s ease-in .475s forwards;
+    }
+    #mongo {
+        margin-top: 1%;
+        left: 59%;
+        width: 7%;
+        animation: iconsAnimate .5s ease-in .525s forwards;
+    }
+}
+
+.disc {
+    text-align: center;
+}
+
+@keyframes bgAnimate {
+    0%{
+        background: url('../../assets/javascript.png');
+    }
+    33%{
+        background: url('../../assets/javascript2.jpg');
+    }
+    67%{
+        background: url('../../assets/javascript3.jpg');
+    }
+
+}
+
+@keyframes iconsAnimate {
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    80%{
+        transform: scale(.9);
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes hAnimate {
+   from {
+       opacity: 0;
+   }
+   to {
+       opacity: 1;
+   }
+}
+
+@keyframes mainBtn {
+    0% {
+       // transform: rotateX(0deg);
+      //  background: rgb(12, 247, 176);
+        //color: #777;
+    } 
+    50% {
+       // background: white;
+        //color: #777;
+    }
+}
+ 
+
+@media screen and (max-width: 700px) {
+    #container {
+        visibility: hidden;
+    }
+}

@@ -1,0 +1,10 @@
+<nav>
+    <ul>
+        <li routerLink="land" id="logo">Chat App</li>       
+    </ul>
+    <ul>
+        <li *ngIf="_auth.isLoggedIn()"routerLinkActive="active" routerLink="home" [routerLinkActiveOptions]="{exact: true}">Home</li>
+        <li *ngIf="!_auth.isLoggedIn()" routerLinkActive="active" routerLink="" [routerLinkActiveOptions]="{exact: true}">Sign Up</li>
+        <li *ngIf="_auth.isLoggedIn()" (click)="_auth.logOut()">Log Out</li>
+    </ul>
+</nav>

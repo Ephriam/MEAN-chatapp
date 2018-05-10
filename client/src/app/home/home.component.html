@@ -1,0 +1,36 @@
+<main *ngIf="users && mainChats">             
+  <aside *ngIf="users">
+    <ul >
+      <li *ngFor="let user of users" (click)="setReciver(user._id)" [class.activeU]="user._id == to">
+        <div id="user">
+          <div class="avatar">
+            {{user.name["0"] | uppercase }}
+          </div>
+          <div class="user-info">
+            <div>{{user.name}}</div>
+            <div>{{user.email}}</div>
+          </div>          
+        </div>        
+      </li>
+    </ul>
+  </aside>
+  <div id="main">
+    <div *ngIf="mainChats" id="chats">
+      <div *ngIf="!to" class="disc"><p>Select a user to start chatting</p></div>
+      <ul *ngIf="to">
+          <li *ngFor="let chat of mainChats">
+            <div [class]="getChatClasses(chat)">
+              <p>{{chat.msg}}</p>
+              <span>{{chat.date | date : 'hh:mm'}}</span>
+            </div>                      
+         </li>        
+      </ul>
+    </div>
+    <div>
+      <input type="text" [(ngModel)]="msg">
+      <button (click)="sendMessage()" id="send" [disabled]="!msg">
+        <span class="fa fa-send"></span>
+      </button>
+    </div>
+  </div>
+</main>

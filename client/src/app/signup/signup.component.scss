@@ -1,0 +1,82 @@
+form {
+    display: grid;
+    justify-items: center;
+    margin-top: 25px;
+    main {
+        padding: 20px 30px;
+        border-radius: 6px;
+        border: 1px solid #ddd;
+        box-shadow: 3px 3px 3px #dedede;
+        width: 400px;       
+    }
+
+    div {
+        padding: 5px;
+        display: flex;
+    }
+
+    label {
+        margin: 10px;
+        margin-left: 0;
+    }
+    h4 {
+        text-align: center;
+        margin: 0;
+        margin-bottom: 5px;
+    }
+}
+
+button {
+    background: rgb(12, 247, 176);
+    padding: 12px 20px;
+    border: 1px solid #bbb;
+    border-radius: 2px;
+    margin: 10px;
+    margin-bottom: 0;
+    transition: all 250ms ease-in;
+    color: #666;
+    &:hover {
+        border: 1px solid #777;
+        box-shadow: 3px 3px 5px #ddd;
+        cursor: pointer;
+    }
+    &[disabled]{
+        background: rgba(101, 245, 202, 0.1);
+        color: #bbb;
+        &:hover{
+            box-shadow: none;
+            border: 1px solid #bbb;
+        }
+    }
+}
+
+input {
+    height: 30px;
+    flex: 1;
+    border: 0;
+    margin-top: 10px;
+    box-shadow: 0 1px 1px #ccc;
+    border-radius: 2px;
+}
+
+a {
+    color: rgb(12, 247, 176);
+}
+
+#sign-up {
+    animation: formSpin .7s;    
+}
+
+#sign-in {
+    animation: formSpin .7s;    
+}
+@keyframes formSpin {
+    0%{
+        opacity: .3;
+        transform: rotateX(180deg);
+    }
+    100%{
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}

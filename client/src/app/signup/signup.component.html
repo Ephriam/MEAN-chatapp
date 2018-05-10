@@ -1,0 +1,63 @@
+<form *ngIf="signUpVar" id="sign-up" (ngSubmit)="signUp(signUpForm.value)" [formGroup]="signUpForm">
+  <main>
+    <h4>Sign Up</h4>
+    <div class="alert-err" *ngIf="err.documentConflict">
+      <p>User name or Email already exists!</p>
+    </div>
+    <div>
+      <label>User Name: </label>
+        <input type="text" [class.input-alert]="!signUpForm.controls['name'].valid && signUpForm.controls['name'].touched" formControlName="name" name="name"> 
+    </div>       
+    <div class="alert-err" *ngIf="!signUpForm.controls['name'].valid && signUpForm.controls['name'].touched">
+      <p>User name is required!</p>
+    </div>
+    <div>
+      <label>Email: </label>
+          <input type="email" [class.input-alert]="!signUpForm.controls['email'].valid && signUpForm.controls['email'].touched" formControlName="email" name="email">   
+    </div> 
+    <div class="alert-err" *ngIf="!signUpForm.controls['email'].valid && signUpForm.controls['email'].touched">
+      <p>A valid email is required!</p>
+    </div>
+    <div>
+      <label>Password: </label>
+          <input type="password" formControlName="password" name="password" [class.input-alert]="!signUpForm.controls['password'].valid && signUpForm.controls['password'].touched">   
+    </div>
+    <div class="alert-err" *ngIf="!signUpForm.controls['password'].valid && signUpForm.controls['password'].touched">
+      <p>A minimum 3 charters password is required!</p>
+    </div>
+    <div>
+      <label>Confirm Password: </label>
+          <input type="password" formControlName="confirmPassword" name="confirmPassword">   
+    </div>       
+    <div class="alert-err" *ngIf="signUpForm.controls['password'].touched && signUpForm.controls['confirmPassword'].touched && err.passwordError">
+      <p>Password Doesn't Match!</p>
+    </div>
+    <button (click)="signUp(signUpForm.value)" [disabled]="!signUpForm.valid">Sign Up</button>
+    <a href="#" (click)="toggleSignUpVar()">already have an acount?</a>
+  </main>
+</form>
+
+<form *ngIf="!signUpVar" (ngSubmit)="signIn(signInForm.value)" id="sign-in" [formGroup]="signInForm">
+  <main>
+    <h4>Sign In</h4>    
+    <div class="alert-err" *ngIf="err.invalidCredntial">
+      <p>Invalid Credntials!</p>
+    </div>
+    <div>
+      <label>Email: </label>
+        <input type="email" formControlName="email"  name="email" [class.input-alert]="!signInForm.controls['email'].valid && signInForm.controls['email'].touched">   
+    </div>
+    <div class="alert-err" *ngIf="!signInForm.controls['email'].valid && signInForm.controls['email'].touched">
+      <p>A valid email is required!</p>
+    </div> 
+    <div>
+      <label>Password: </label>
+         <input type="password" formControlName="password"  name="password" [class.input-alert]="!signInForm.controls['password'].valid && signInForm.controls['password'].touched">   
+    </div> 
+    <div class="alert-err" *ngIf="!signInForm.controls['password'].valid && signInForm.controls['password'].touched">
+      <p>Password is required!</p>
+    </div> 
+    <button (click)="signIn(signInForm.value)" [disabled]="!signInForm.valid">Sign In</button>
+    <a href="#" (click)="toggleSignUpVar()">don't have an account?</a>
+  </main>
+</form>
