@@ -37,6 +37,10 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit() {
+    if(this._auth.isLoggedIn()){
+      return this._router.navigate([''])
+    }
+
   }
 
   signUp(form) {

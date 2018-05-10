@@ -60,7 +60,6 @@ router.post('/signup', (req, res) => {
 })
 
 router.post('/signin', (req, res) => {
-    console.log(req.body)
     User.find({email: req.body.email}).then((user) => {
         if(user.length < 1){
             return res.status(403).json({msg: 'invalid credentials'})
@@ -75,7 +74,6 @@ router.post('/signin', (req, res) => {
     }).catch((err) =>
     {
         res.status(500).json({err: 'error'})
-        console.log(err)
     })
 })
 

@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, "./public")))
 
 //connect to mongoDB
 //mongoose.connect('mongodb://127.0.0.1:'+ databasePort + '/' + databseName)
-mongoose.connect(mongoUriLocal).then(()=>{}, (err) => {console.log(err)})
+mongoose.connect(mongoUri).then(()=>{}, (err) => {console.log(err)})
 mongoose.connection.on('error', console.error.bind(console, 'Database connection error:'))
                    .once('open', function() {  console.log("Database is connected!");  })
 

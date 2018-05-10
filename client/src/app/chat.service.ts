@@ -4,8 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 @Injectable()
 export class ChatService {
 
-   baseUrl = 'http://localhost:3000/'
-   //baseUrl  = '/'
+   //baseUrl = 'http://localhost:3000/'
+   baseUrl  = '/'
 
   socket
 

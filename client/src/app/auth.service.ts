@@ -7,8 +7,8 @@ export class AuthService {
 
   constructor(private _http: HttpClient, private _router: Router) { }
   
-  baseUrl = 'http://localhost:3000/'
-  //baseUrl  = '/'
+  //baseUrl = 'http://localhost:3000/'
+  baseUrl  = '/'
 
   loggedIn = false
 
