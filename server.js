@@ -14,7 +14,7 @@ var app = express();
 serverPort = process.env.PORT || 3000;
 databasePort = 27017;
 databseName = "chatapp2";
-mongoUri = 'mongodb://ephraim:ephraimtrial@ds119150.mlab.com:19150/chatandwallet'
+mongoUri = 'mongodb://username:password@ds119150.mlab.com:19150/chatandwallet'
 mongoUriLocal = 'mongodb://127.0.0.1:'+ databasePort + '/' + databseName
 app.use(cors())
 app.use(bodyParser.json())
