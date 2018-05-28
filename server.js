@@ -36,6 +36,9 @@ app.use('/socket', (req, res) => {
     res.sendFile(__dirname + '/node_modules/socket.io-client/dist/socket.io.js')
 })
 
+app.use('/*', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html')
+})
 app.use((req, res, next) => {
     var error = new Error('404 Not found')
     error.status = 404

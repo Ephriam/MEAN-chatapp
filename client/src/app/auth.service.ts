@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Router } from '@angular/router'
+import { ShareService } from './share.service'
 
 @Injectable()
 export class AuthService {
 
-  constructor(private _http: HttpClient, private _router: Router) { }
+  constructor(private _share: ShareService, private _http: HttpClient, private _router: Router) { }
   
-  //baseUrl = 'http://localhost:3000/'
-  baseUrl  = '/'
+  baseUrl  = this._share.baseUri
 
   loggedIn = false
 

@@ -1,6 +1,6 @@
 main {
     display: grid;
-    grid-template-columns: 300px auto;
+    grid-template-columns: 300px 1fr;
     border: 2px solid #ddd;
     height: calc(100% - 70px);
 }
@@ -31,10 +31,11 @@ aside{
     grid-auto-rows: auto 42px;
     overflow: hidden;
     background: rgb(12, 247, 176);
+    width: inherit;
     
     div:last-child {
         display: grid;
-        grid-template-columns: auto 42px;
+        grid-template-columns: 1fr 42px;
     }
 
     button {
@@ -55,21 +56,24 @@ aside{
     overflow: auto;
     padding: 20px;
     display: grid;
-    grid-template-columns: 100%;      
+    width: inherit;
+    grid-template-columns: 1fr;      
     ul {
         padding: 0;
+        width: inherit;
     }
     ul li{
         display: grid;
-        max-width: 100%;
+        width: inherit;
         list-style: none;
         margin: 0;       
         margin-bottom: 15px;
         div {          
             padding: 25px;
             border-radius: 10px;
-            display: block;            
-           p {                               
+            max-width: 50%;
+            display: inline-block;            
+           p {                             
              word-wrap: break-word;
              padding-bottom: 10px;
              margin: 0;

@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import * as io from 'socket.io-client'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { ShareService } from './share.service';
 @Injectable()
 export class ChatService {
 
-   //baseUrl = 'http://localhost:3000/'
-   baseUrl  = '/'
+  baseUrl  = this._share.baseUri
 
   socket
 
-  constructor(private _http: HttpClient) { }
+  constructor(private _http: HttpClient, private _share: ShareService ) { }
 
   getUsers() {
     let headers = new HttpHeaders().set('Authorization', localStorage.Authorization)

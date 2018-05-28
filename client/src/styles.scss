@@ -79,3 +79,7 @@ button:hover {
 li:active{
     border: none;
 }
+
+input:focus {
+    border: 0;
+}

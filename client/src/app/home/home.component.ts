@@ -22,11 +22,9 @@ export class HomeComponent implements OnInit {
       if(!this._auth.isLoggedIn()){
         return this._router.navigate([''])
       }
-      if(localStorage.user==undefined){
-        this.currentUser = localStorage.user
-      }else{
         this.getCurrentUser()
-      }
+        this._chat.initChat()
+        this._chat.socket.emit('Auth', {Authorization: localStorage.Authorization})
       //this.smallScreen(this.minDevice)
       this._chat.getUsers()
           .subscribe((res) => {

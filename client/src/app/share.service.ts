@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ShareService {
 
-  title = 'from Sevice'
+  //baseUri = '/'
+  baseUri = 'http://localhost:3000/'
+  title = 'jfdks'
   constructor() { }
 
 }

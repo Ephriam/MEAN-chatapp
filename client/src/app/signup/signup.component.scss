@@ -41,11 +41,12 @@ button {
         cursor: pointer;
     }
     &[disabled]{
-        background: rgba(101, 245, 202, 0.1);
+        background: rgba(201, 201, 201, 0.1);
         color: #bbb;
         &:hover{
             box-shadow: none;
             border: 1px solid #bbb;
+            cursor: not-allowed;
         }
     }
 }
@@ -70,6 +71,8 @@ a {
 #sign-in {
     animation: formSpin .7s;    
 }
+
+
 @keyframes formSpin {
     0%{
         opacity: .3;

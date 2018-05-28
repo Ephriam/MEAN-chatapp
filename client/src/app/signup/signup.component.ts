@@ -38,7 +38,7 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
     if(this._auth.isLoggedIn()){
-      return this._router.navigate([''])
+      return this._router.navigate(['land'])
     }
 
   }
@@ -69,7 +69,6 @@ export class SignupComponent implements OnInit {
   }
 
   signIn(form) {
-    console.log(form)
     this._auth.login(form)
       .subscribe((res: any) => {
         localStorage.Authorization = res.token
